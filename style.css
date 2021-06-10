@@ -5,7 +5,6 @@
 }
 
 body {
-    background: #1a1e23;
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
@@ -23,6 +22,8 @@ li {
     justify-content: space-between;
     align-items: center;
     font-size: 1rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.5s ease;
 }
 
 span {
@@ -36,17 +37,9 @@ input[type='checkbox'] {
     margin-left: 1rem;
 }
 
-.header {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 20vh;
-    margin: 3rem 0;
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5
 }
 
 .delete-btn {
@@ -62,10 +55,46 @@ input[type='checkbox'] {
     color: white;
 }
 
+.delete-btn:active {
+    background: transparent;
+    color: darkred;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    margin: 3rem 0;
+}
+
+.header {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
 .to-do-list {
     text-align: center;
     position: relative;
-    z-index: 20;
+    z-index: 16;
+    color: white;
+    max-width: 60vw;
+}
+
+.to-do-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.fa-plus {
+    transition: all 0.5s ease;
+}
+
+.fa-plus:active {
+    transform: rotate(360deg);
+    transition: all 0.5s ease;
     color: white;
 }
 
@@ -84,6 +113,7 @@ input[type='checkbox'] {
 
 #input-task {
     width: 100%;
+    outline: none;
 }
 
 #add-task-button:hover {
@@ -92,15 +122,7 @@ input[type='checkbox'] {
 }
 
 #task-list {
-    min-width: 30%;
     list-style: none;
-}
-
-.to-do-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
 }
 
 @keyframes move_wave {
