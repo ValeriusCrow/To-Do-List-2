@@ -17,6 +17,7 @@ form {
 
 li {
     display: flex;
+    flex-wrap: wrap;
     background-color: white;
     color: black;
     justify-content: space-between;
@@ -27,14 +28,16 @@ li {
 }
 
 span {
-    padding: 0 15px 0 15px;
     background-color: white;
     flex: 1;
     text-align: left;
+    overflow-wrap: anywhere;
+    margin: 0 10px;
 }
 
 input[type='checkbox'] {
-    margin-left: 1rem;
+    margin: 1rem;
+    padding: 1rem;
 }
 
 .completed {
@@ -78,13 +81,11 @@ input[type='checkbox'] {
     position: relative;
     z-index: 16;
     color: white;
-    max-width: 60vw;
+    max-width: 40em;
+    transition: max-width 0.3s ease;
 }
 
 .to-do-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 2rem;
 }
 
@@ -96,6 +97,10 @@ input[type='checkbox'] {
     transform: rotate(360deg);
     transition: all 0.5s ease;
     color: white;
+}
+
+.fa-trash {
+    pointer-events: none;
 }
 
 #input-task, #add-task-button {
@@ -205,4 +210,10 @@ input[type='checkbox'] {
 
 .waveAnimation .waveBottom {
     animation: move_wave 15s linear infinite;
+}
+
+@media (max-width: 1300px) {
+    .to-do-list {
+    max-width: 60%;
+}
 }
